@@ -5,8 +5,7 @@ gem 'rails', '3.1.1'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
+gem 'pg'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -23,7 +22,9 @@ group :test, :development do
   gem 'capybara'
   gem 'guard-rspec'
   gem 'growl_notify'
-  #run 'gem install rb-fsevent' for Mac OSX FSEvents support
+  # run 'gem install rb-fsevent' for Mac OSX FSEvents support
+  # run 'gem install lunchy' to manage launchctl (lunchy [start|stop] postgres)
+  # run 'env ARCHFLAGS="-arch x86_64" gem install pg' to install pg gem
 end
 
 # To use ActiveModel has_secure_password
