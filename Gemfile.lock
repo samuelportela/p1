@@ -29,7 +29,6 @@ GEM
       activesupport (= 3.1.1)
     activesupport (3.1.1)
       multi_json (~> 1.0)
-    ansi (1.4.1)
     arel (2.2.1)
     builder (3.0.0)
     capybara (1.1.2)
@@ -137,8 +136,6 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
-    turn (0.8.3)
-      ansi
     tzinfo (0.3.31)
     uglifier (1.1.0)
       execjs (>= 0.3.0)
@@ -159,5 +156,4 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 3.1.4)
   sqlite3
-  turn
   uglifier (>= 1.0.3)

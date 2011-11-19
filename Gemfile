@@ -19,7 +19,6 @@ end
 gem 'jquery-rails'
 
 group :test, :development do
-  gem 'turn'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'guard-rspec'
