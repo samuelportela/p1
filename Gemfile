@@ -23,6 +23,7 @@ group :test, :development do
   gem 'capybara'
   gem 'guard-rspec'
   gem 'growl_notify'
+  #run 'gem install rb-fsevent' for Mac OSX FSEvents support
 end
 
 # To use ActiveModel has_secure_password
