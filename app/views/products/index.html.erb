@@ -1,6 +1,13 @@
 <h1>Products</h1>
+
+<%= form_for Product.new do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>
+
 <ul>
-	<% for product in @products %>
-	<li><%= product.name %></li>
-	<% end %>
+  <% for product in @products %>
+  <li><%= product.name %></li>
+  <% end %>
 </ul>

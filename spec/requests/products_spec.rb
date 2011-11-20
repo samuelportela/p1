@@ -8,5 +8,13 @@ describe "Products" do
       visit products_path
       page.should have_content 'magic mouse'
     end
+    
+    it "should create a new product" do
+      visit products_path
+      fill_in 'Name', :with => 'trust mouse'
+      click_button 'Create Product'
+      
+      page.should have_content 'trust mouse'
+    end
   end
 end
