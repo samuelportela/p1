@@ -29,6 +29,7 @@ GEM
       activesupport (= 3.1.1)
     activesupport (3.1.1)
       multi_json (~> 1.0)
+    addressable (2.2.6)
     arel (2.2.1)
     builder (3.0.0)
     capybara (1.1.2)
@@ -65,6 +66,8 @@ GEM
       thor (~> 0.14)
     json (1.6.1)
     json_pure (1.6.1)
+    launchy (2.0.5)
+      addressable (~> 2.2.6)
     mail (2.3.0)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -152,6 +155,7 @@ DEPENDENCIES
   growl_notify
   guard-rspec
   jquery-rails
+  launchy
   pg
   rails (= 3.1.1)
   rspec-rails

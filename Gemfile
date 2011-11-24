@@ -25,6 +25,7 @@ group :test, :development do
   # run 'gem install rb-fsevent' for Mac OSX FSEvents support
   # run 'gem install lunchy' to manage launchctl (lunchy [start|stop] postgres)
   # run 'env ARCHFLAGS="-arch x86_64" gem install pg' to install pg gem
+  gem 'launchy'
 end
 
 # To use ActiveModel has_secure_password

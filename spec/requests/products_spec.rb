@@ -15,6 +15,7 @@ describe "Products" do
       click_button 'Create Product'
       
       page.should have_content 'trust mouse'
+      save_and_open_page
     end
   end
 end
