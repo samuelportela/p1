@@ -1,3 +1,3 @@
 class Product < ActiveRecord::Base
-  validates_presence_of :name
+  validates :name, :presence => {:message => :is_mandatory}
 end

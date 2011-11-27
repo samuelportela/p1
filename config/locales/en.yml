@@ -2,4 +2,25 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  
+  project_name: P1 Project
+  edit: Edit
+  product_successfully_updated: Product successfully updated.
+  
+  activerecord:
+    models:
+      product: Product
+    attributes:
+      product:
+        name: Name
+    errors:
+      models:
+        product:
+          attributes:
+            name:
+              is_mandatory: is mandatory
+  
+  helpers:
+    submit:
+      create: Create %{model}
+      update: Update %{model}

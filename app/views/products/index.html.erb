@@ -1,4 +1,4 @@
-<h1>Products</h1>
+<h1><%= t('activerecord.models.product').pluralize %></h1>
 
 <%= render 'form' %>
 
@@ -6,7 +6,7 @@
   <% for product in @products %>
   <li>
     <%= product.name %>
-    | <%= link_to 'Edit', edit_product_path(product) %>
+    | <%= link_to t(:edit), edit_product_path(product) %>
   </li>
   <% end %>
 </ul>

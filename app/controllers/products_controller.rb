@@ -14,12 +14,12 @@ class ProductsController < ApplicationController
   end
   
   def update
-    product = Product.find params[:id]
+    @product = Product.find params[:id]
     
-    if product.update_attributes params[:product]
-      redirect_to products_path
+    if @product.update_attributes params[:product]
+      redirect_to products_path, :notice => t(:product_successfully_updated)
     else
-      redirect_to :back
+      render :action => :edit
     end
   end
 end

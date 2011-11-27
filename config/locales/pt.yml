@@ -1,0 +1,26 @@
+# Sample localization file for Portuguese. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+pt:
+  
+  project_name: Projeto P1
+  edit: Editar
+  product_successfully_updated: Produto atualizado com sucesso.
+  
+  activerecord:
+    models:
+      product: Produto
+    attributes:
+      product:
+        name: Nome
+    errors:
+      models:
+        product:
+          attributes:
+            name:
+              is_mandatory: é obrigatório
+  
+  helpers:
+    submit:
+      create: Criar %{model}
+      update: Atualizar %{model}
