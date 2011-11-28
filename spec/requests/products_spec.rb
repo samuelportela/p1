@@ -53,7 +53,6 @@ describe 'Products' do
       click_button 'Update Product'
       
       page.should have_content 'Name is mandatory'
-      save_and_open_page
     end
   end
 end
