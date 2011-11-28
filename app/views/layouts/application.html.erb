@@ -2,18 +2,18 @@
 <html>
 <head>
   <title><%= t(:project_name) %></title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag 'application' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <% if flash.any? %>
-  <% flash.each do |name, message| %>
-    <div class="flash <%=name%>">
-      <%= message %>
-    </div>
-  <% end %>
+  <ul class="flash">
+    <% flash.each do |name, message| %>
+      <li class="<%=name%>"><%= t(message) %></li>
+    <% end %>
+  </ul>
 <% end %>
 
 <%= yield %>

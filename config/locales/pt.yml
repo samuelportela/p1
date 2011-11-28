@@ -5,7 +5,7 @@ pt:
   
   project_name: Projeto P1
   edit: Editar
-  product_successfully_updated: Produto atualizado com sucesso.
+  successfully_saved: Informações salvas com sucesso.
   
   activerecord:
     models:

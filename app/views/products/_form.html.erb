@@ -1,10 +1,10 @@
 <%= form_for @product do |f| %>
   <% if @product.errors.any? %>
-    <div id="product errors">
+    <ul id="product_messages">
       <% @product.errors.full_messages.each do |message| %>
-        <%= message %>
+        <li class="product_error"><%= message %></li>
       <% end %>
-    </div>
+    </ul>
   <% end %>
   
   <%= f.label :name %>

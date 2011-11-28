@@ -5,8 +5,14 @@ class ProductsController < ApplicationController
   end
   
   def create
-    Product.create params[:product]
-    redirect_to :back
+    @product = Product.create params[:product]
+    
+    if @product.errors.empty?
+      redirect_to :back, :notice => :successfully_saved
+    else
+      @products = Product.all
+      render :action => :index
+    end
   end
   
   def edit
@@ -17,7 +23,7 @@ class ProductsController < ApplicationController
     @product = Product.find params[:id]
     
     if @product.update_attributes params[:product]
-      redirect_to products_path, :notice => t(:product_successfully_updated)
+      redirect_to products_path, :notice => :successfully_saved
     else
       render :action => :edit
     end

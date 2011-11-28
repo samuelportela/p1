@@ -18,7 +18,15 @@ describe 'Products' do
       click_button 'Create Product'
       
       current_path.should == products_path
+      page.should have_content 'Information successfully saved.'
       page.should have_content 'trust mouse'
+    end
+    
+    it 'should not create an empty name' do
+      visit products_path
+      click_button 'Create Product'
+      
+      page.should have_content 'Name is mandatory'
     end
   end
   
@@ -34,7 +42,7 @@ describe 'Products' do
       click_button 'Update Product'
       
       current_path.should == products_path
-      page.should have_content 'successfully updated'
+      page.should have_content 'Information successfully saved.'
       page.should have_content 'trust mouse'
     end
     
@@ -45,6 +53,7 @@ describe 'Products' do
       click_button 'Update Product'
       
       page.should have_content 'Name is mandatory'
+      save_and_open_page
     end
   end
 end
