@@ -4,8 +4,11 @@
 en:
   
   project_name: P1 Project
+  details: Details
+  new: New
   edit: Edit
-  successfully_saved: Information successfully saved.
+  product_successfully_created: Product successfully created.
+  product_successfully_updated: Product successfully updated.
   
   activerecord:
     models:

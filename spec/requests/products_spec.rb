@@ -5,33 +5,41 @@ describe 'Products' do
     @product = Product.create :name => 'magic mouse'
   end
   
-  describe 'GET /products' do
-    it 'should display some products' do
+  describe 'GET index' do
+    it 'should list some products' do
       visit products_path
       page.should have_content 'magic mouse'
     end
-    
-    it 'should create a new product' do
+  end
+  
+  describe 'POST create' do
+    it 'should create a product' do
       visit products_path
+      click_link 'New'
       
-      fill_in :name, :with => 'trust mouse'
+      current_path.should == new_product_path
+      
+      fill_in 'Name', :with => 'trust mouse'
       click_button 'Create Product'
       
-      current_path.should == products_path
-      page.should have_content 'Information successfully saved.'
+      page.should have_content 'Product successfully created.'
       page.should have_content 'trust mouse'
     end
     
-    it 'should not create an empty name' do
+    it 'should display error messages when validation errors exist' do
       visit products_path
+      click_link 'New'
+      
+      current_path.should == new_product_path
+      
       click_button 'Create Product'
       
       page.should have_content 'Name is mandatory'
     end
   end
   
-  describe 'PUT /products' do
-    it 'should edit a product' do
+  describe 'PUT update' do
+    it 'should update a product' do
       visit products_path
       click_link 'Edit'
       
@@ -41,14 +49,17 @@ describe 'Products' do
       fill_in 'Name', :with => 'trust mouse'
       click_button 'Update Product'
       
-      current_path.should == products_path
-      page.should have_content 'Information successfully saved.'
+      current_path.should == product_path(@product)
+      page.should have_content 'Product successfully updated.'
       page.should have_content 'trust mouse'
     end
     
-    it 'should not update an empty name' do
+    it 'should display error messages when validation errors exist' do
       visit products_path
       click_link 'Edit'
+      
+      current_path.should == edit_product_path(@product)
+      
       fill_in 'Name', :with => ''
       click_button 'Update Product'
       

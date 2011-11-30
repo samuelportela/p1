@@ -10,8 +10,8 @@
 
 <% if flash.any? %>
   <ul class="flash">
-    <% flash.each do |name, message| %>
-      <li class="<%=name%>"><%= t(message) %></li>
+    <% flash.each do |type, message| %>
+      <li class="<%= type %>"><%= t(message) %></li>
     <% end %>
   </ul>
 <% end %>
