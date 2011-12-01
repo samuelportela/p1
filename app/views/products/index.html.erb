@@ -4,9 +4,10 @@
 
 <ul>
   <% for product in @products %>
-  <li>
+  <li id="product_<%= product.id %>">
     <%= product.name %>
     | <%= link_to t(:edit), edit_product_path(product) %>
+    | <%= link_to t(:delete), product, :method => 'delete' %>
   </li>
   <% end %>
 </ul>

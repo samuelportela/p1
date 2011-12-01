@@ -5,10 +5,13 @@ en:
   
   project_name: P1 Project
   details: Details
+  list: List
   new: New
   edit: Edit
+  delete: Delete
   product_successfully_created: Product successfully created.
   product_successfully_updated: Product successfully updated.
+  product_successfully_removed: Product successfully removed.
   
   activerecord:
     models:
