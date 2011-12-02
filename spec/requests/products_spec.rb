@@ -17,7 +17,7 @@ describe 'Products' do
   describe 'POST create' do
     it 'should create a product' do
       visit products_path
-      click_link 'New'
+      click_link 'Create'
       
       current_path.should == new_product_path
       
@@ -37,7 +37,7 @@ describe 'Products' do
     
     it 'should display error messages when validation errors exist' do
       visit products_path
-      click_link 'New'
+      click_link 'Create'
       
       current_path.should == new_product_path
       
@@ -81,7 +81,7 @@ describe 'Products' do
   describe 'DELETE destroy' do
     it 'should delete a product' do
       visit products_path
-      click_link 'Delete'
+      click_link 'Remove'
       
       current_path.should == products_path
       page.should have_content 'Product successfully removed'

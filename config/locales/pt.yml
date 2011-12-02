@@ -5,10 +5,10 @@ pt:
   
   project_name: Projeto P1
   details: Detalhes
-  list: Lista
-  new: Novo
+  list: Listar
+  create: Criar
   edit: Editar
-  delete: Remover
+  remove: Remover
   product_successfully_created: Produto criado com sucesso.
   product_successfully_updated: Produto atualizado com sucesso.
   product_successfully_removed: Produto removido com sucesso.

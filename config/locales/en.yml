@@ -6,9 +6,9 @@ en:
   project_name: P1 Project
   details: Details
   list: List
-  new: New
+  create: Create
   edit: Edit
-  delete: Delete
+  remove: Remove
   product_successfully_created: Product successfully created.
   product_successfully_updated: Product successfully updated.
   product_successfully_removed: Product successfully removed.

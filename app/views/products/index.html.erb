@@ -1,13 +1,13 @@
 <h1><%= t('activerecord.models.product').pluralize %></h1>
 
-<%= link_to t(:new), new_product_path %>
+<%= link_to t(:create), new_product_path %>
 
 <ul>
   <% for product in @products %>
   <li id="product_<%= product.id %>">
     <%= product.name %>
     | <%= link_to t(:edit), edit_product_path(product) %>
-    | <%= link_to t(:delete), product, :method => 'delete' %>
+    | <%= link_to t(:remove), product, :method => 'delete' %>
   </li>
   <% end %>
 </ul>
