@@ -9,6 +9,7 @@ en:
   create: Create
   edit: Edit
   remove: Remove
+  product_removal_confirmation: Are you sure you want to remove this product?
   product_successfully_created: Product successfully created.
   product_successfully_updated: Product successfully updated.
   product_successfully_removed: Product successfully removed.
