@@ -79,13 +79,20 @@ describe 'Products' do
   end
   
   describe 'DELETE destroy' do
-    it 'should delete a product' do
+    it 'should delete a product', :js => true do
       visit products_path
-      click_link 'Remove'
+      find("#product_#{@mouse.id}").click_link 'Remove'
       
       current_path.should == products_path
       page.should have_content 'Product successfully removed'
       page.should_not have_content 'magic mouse'
+      page.should have_content 'hot keyboard'
+      
+      save_and_open_page
+      page.execute_script "document.getElementById('product_#{@keyboard.id}').innerHTML = 'HAS ONLY ONE PRODUCT'"
+      page.should_not have_content 'hot keyboard'
+      find("#product_#{@keyboard.id}").text.should have_content('HAS ONLY ONE PRODUCT')
+      save_and_open_page
     end
   end
 end

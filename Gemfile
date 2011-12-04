@@ -27,6 +27,9 @@ group :test do
   # run 'env ARCHFLAGS="-arch x86_64" gem install pg' to install pg gem
   gem 'launchy'
   gem 'shoulda-matchers'
+  # before bundle capybara-webkit, it is necessary to install QT
+  gem 'capybara-webkit'
+  gem 'database_cleaner'
 end
 
 # To use ActiveModel has_secure_password
