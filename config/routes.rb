@@ -1,6 +1,11 @@
 P1::Application.routes.draw do
   root :to => 'Products#index'
-  resources :products
+  
+  scope '(/:locale)' do
+    resources :products
+  end
+  
+  match '/:locale' => 'products#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

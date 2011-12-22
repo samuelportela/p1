@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  font-size: 12px;
+  font-family: Verdana,Arial,sans-serif;
+}
+
 ul.flash {
   background: lighten(green, 30%);
   border: 2px solid green;

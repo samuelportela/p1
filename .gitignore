@@ -5,3 +5,5 @@ tmp/
 .sass-cache/
 .project
 .DS_Store
+/nbproject
+/.settings/
