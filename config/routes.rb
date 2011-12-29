@@ -1,5 +1,5 @@
 P1::Application.routes.draw do
-  root :to => 'products#index', :locale => "#{I18n.default_locale}"
+  root :to => 'products#index', :locale => I18n.default_locale
   
   scope '(/:locale)' do
     resources :products
