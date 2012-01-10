@@ -1,4 +1,6 @@
 P1::Application.routes.draw do
+  devise_for :users
+
   root :to => 'products#index', :locale => I18n.default_locale
   
   scope '(/:locale)' do

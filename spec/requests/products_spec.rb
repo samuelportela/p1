@@ -1,23 +1,40 @@
 require 'spec_helper'
 
 describe 'Products' do
+  
+  def login_as(role)
+    @administrator = User.new(:email => 'email', :password => 'password', :role => role)
+    @administrator.confirm!
+    
+    click_link 'Sign in'
+    fill_in 'Email', :with => 'email'
+    fill_in 'Password', :with => 'password'
+    click_button 'Sign in'
+  end
+  
   before do
     @mouse = Product.create(:name => 'magic mouse')
     @keyboard = Product.create(:name => 'hot keyboard')
+    visit products_path
+    login_as(:administrator)
   end
   
   describe 'GET index' do
     it 'should list some products' do
-      visit products_path
-      
       page.should have_content 'magic mouse'
       page.should have_content 'hot keyboard'
+    end
+    
+    it 'should list a specific product' do
+      click_link 'magic mouse'
+      
+      page.should have_content 'Details'
+      page.should have_content 'magic mouse'
     end
   end
   
   describe 'POST create' do
     it 'should create a product' do
-      visit products_path
       click_link 'Create'
       fill_in 'Name', :with => 'trust mouse'
       click_button 'Create Product'
@@ -33,7 +50,6 @@ describe 'Products' do
     end
     
     it 'should display error messages when validation errors exist' do
-      visit products_path
       click_link 'Create'
       click_button 'Create Product'
       
@@ -43,7 +59,6 @@ describe 'Products' do
   
   describe 'PUT update' do
     it 'should update a product' do
-      visit products_path
       find("#product_#{@mouse.id}").click_link 'Edit'
       
       find_field('Name').value.should == 'magic mouse'
@@ -56,7 +71,6 @@ describe 'Products' do
     end
     
     it 'should display error messages when validation errors exist' do
-      visit products_path
       find("#product_#{@keyboard.id}").click_link 'Edit'
       
       find_field('Name').value.should == 'hot keyboard'
@@ -70,7 +84,6 @@ describe 'Products' do
   
   describe 'DELETE destroy', :js => true do
     it 'should delete a product' do
-      visit products_path
       find("#product_#{@keyboard.id}").click_link 'Remove'
       
       page.should have_content 'Confirmation'

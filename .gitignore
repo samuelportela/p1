@@ -7,3 +7,4 @@ tmp/
 .DS_Store
 /nbproject
 /.settings/
+/config/email_settings.yml

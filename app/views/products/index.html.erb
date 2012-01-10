@@ -5,7 +5,7 @@
 <ul>
   <% for product in @products %>
   <li id="product_<%= product.id %>">
-    <%= product.name %>
+    <%= link_to product.name, product %>
     | <%= link_to t(:edit), edit_product_path(product) %>
     | <%= link_to t(:remove), product, :method => 'delete', :confirm => t(:product_removal_confirmation) %>
   </li>

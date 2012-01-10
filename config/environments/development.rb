@@ -1,3 +1,5 @@
+require File.expand_path('../../load_email_settings', __FILE__)
+
 P1::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
@@ -27,4 +29,21 @@ P1::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Action mailer configuration
+  if APP_CONFIG['send_email']
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.default_url_options = {:host => APP_CONFIG['default_url_host']}
+    config.action_mailer.smtp_settings = {
+      :address => APP_CONFIG['smtp_address'],
+      :port => APP_CONFIG['smtp_port'],
+      :domain => APP_CONFIG['smtp_domain'],
+      :user_name => APP_CONFIG['email_username'],
+      :password => APP_CONFIG['email_password'],
+      :authentication => 'plain',
+      :enable_starttls_auto => true
+    }
+  else
+    config.action_mailer.default_url_options = {:host => 'localhost:3000'}
+  end
 end
