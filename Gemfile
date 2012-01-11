@@ -8,6 +8,8 @@ gem 'rails', '3.1.1'
 gem 'pg'
 gem 'devise'
 gem 'cancan'
+gem 'paperclip'
+# run 'brew install imagemagick' to install imagemagick (paperclip requires it)
 
 # Gems used only for assets and not required
 # in production environments by default.

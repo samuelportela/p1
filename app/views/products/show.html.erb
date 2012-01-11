@@ -2,7 +2,8 @@
 
 <p>
   <b><%= t('activerecord.attributes.product.name') %>:</b>
-  <%= @product.name %>
+  <%= @product.name %><br />
+  <%= image_tag @product.image.url(:thumb) %>
 </p>
 
 <%= link_to t(:list), products_path %>
