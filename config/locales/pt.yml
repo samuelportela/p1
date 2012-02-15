@@ -11,20 +11,43 @@ pt:
   create: Criar
   edit: Editar
   remove: Remover
+  
   product_removal_confirmation: Você tem certeza de que deseja remover este produto?
   product_successfully_created: Produto criado com sucesso.
   product_successfully_updated: Produto atualizado com sucesso.
   product_successfully_removed: Produto removido com sucesso.
   
+  auction_removal_confirmation: Você tem certeza de que deseja remover este leilão?
+  auction_successfully_created: Leilão criado com sucesso.
+  auction_successfully_updated: Leilão atualizado com sucesso.
+  auction_successfully_removed: Leilão removido com sucesso.
+  
+  bid_removal_confirmation: Você tem certeza de que deseja remover este lance?
+  bid_successfully_created: Lance criado com sucesso.
+  bid_successfully_updated: Lance atualizado com sucesso.
+  bid_successfully_removed: Lance removido com sucesso.
+  
   activerecord:
     models:
       product: Produto
+      auction: Leilão
+      bid: Lance
     attributes:
       product:
         name: Nome
+      auction:
+        name: Nome
+        product: Produto
+      bid:
+        auction: Leilão
+        user: Usuário
     errors:
       models:
         product:
+          attributes:
+            name:
+              is_mandatory: é obrigatório
+        auction:
           attributes:
             name:
               is_mandatory: é obrigatório
@@ -33,3 +56,9 @@ pt:
     submit:
       create: Criar %{model}
       update: Atualizar %{model}
+    label:
+      auction:
+        product_id: Produto
+      bid:
+        auction_id: Leilão
+        user_id: Usuário

@@ -9,7 +9,7 @@ class Ability
     elsif user.is? :analyzer
       can :read, :all
     else
-      can :read, Product
+      can :read, :all
     end
     
     # Define abilities for the passed in user here. For example:

@@ -1,0 +1,11 @@
+<h1><%= t(:details) %></h1>
+
+<p>
+  <%= t('activerecord.attributes.bid.auction') %>:
+  <%= @bid.auction.name %><br />
+  
+  <%= t('activerecord.attributes.bid.user') %>:
+  <%= @bid.user.email %>
+</p>
+
+<%= link_to t(:list), bids_path %>

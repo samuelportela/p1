@@ -1,0 +1,11 @@
+<h1><%= t(:details) %></h1>
+
+<p>
+  <%= t('activerecord.attributes.auction.name') %>:
+  <%= @auction.name %><br />
+  
+  <%= t('activerecord.attributes.auction.product') %>:
+  <%= @auction.product.name %>
+</p>
+
+<%= link_to t(:list), auctions_path %>

@@ -1,0 +1,17 @@
+<%= form_for @bid do |f| %>
+  <% if @bid.errors.any? %>
+    <ul id="bid_messages">
+      <% @bid.errors.full_messages.each do |message| %>
+        <li class="bid_error"><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= f.label :auction_id %>
+  <%= f.collection_select(:auction_id, Auction.all, :id, :name) %>
+
+  <%= f.label :user_id %>
+  <%= f.collection_select(:user_id, User.all, :id, :email) %>
+
+  <%= f.submit %>
+<% end %>

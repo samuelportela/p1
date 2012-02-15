@@ -11,20 +11,43 @@ en:
   create: Create
   edit: Edit
   remove: Remove
+  
   product_removal_confirmation: Are you sure you want to remove this product?
   product_successfully_created: Product successfully created.
   product_successfully_updated: Product successfully updated.
   product_successfully_removed: Product successfully removed.
   
+  auction_removal_confirmation: Are you sure you want to remove this auction?
+  auction_successfully_created: Auction successfully created.
+  auction_successfully_updated: Auction successfully updated.
+  auction_successfully_removed: Auction successfully removed.
+  
+  bid_removal_confirmation: Are you sure you want to remove this bid?
+  bid_successfully_created: Bid successfully created.
+  bid_successfully_updated: Bid successfully updated.
+  bid_successfully_removed: Bid successfully removed.
+  
   activerecord:
     models:
       product: Product
+      auction: Auction
+      bid: Bid
     attributes:
       product:
         name: Name
+      auction:
+        name: Name
+        product: Product
+      bid:
+        auction: Auction
+        user: User
     errors:
       models:
         product:
+          attributes:
+            name:
+              is_mandatory: is mandatory
+        auction:
           attributes:
             name:
               is_mandatory: is mandatory
@@ -33,3 +56,9 @@ en:
     submit:
       create: Create %{model}
       update: Update %{model}
+    label:
+      auction:
+        product_id: Product
+      bid:
+        auction_id: Auction
+        user_id: User

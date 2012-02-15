@@ -1,8 +1,9 @@
 <h1><%= t(:details) %></h1>
 
 <p>
-  <b><%= t('activerecord.attributes.product.name') %>:</b>
+  <%= t('activerecord.attributes.product.name') %>:
   <%= @product.name %><br />
+  
   <%= image_tag @product.image.url(:thumb) %>
 </p>
 
