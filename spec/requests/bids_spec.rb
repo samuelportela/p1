@@ -2,28 +2,30 @@ require 'spec_helper'
 
 describe 'Bids' do
   
-  def login_as(role)
-    @administrator = User.new(:email => 'email', :password => 'password', :role => role)
-    @administrator.confirm!
-    
+  def login_as(user)
     click_link 'Sign in'
-    fill_in 'Email', :with => 'email'
-    fill_in 'Password', :with => 'password'
+    fill_in 'Email', :with => user.email
+    fill_in 'Password', :with => user.password
     click_button 'Sign in'
   end
   
   before do
+    @administrator = User.new(:email => 'user_email', :password => 'user_password', :role => :administrator)
+    @administrator.confirm!
     @mouse = Product.create(:name => 'magic mouse')
     @keyboard = Product.create(:name => 'hot keyboard')
     @mouse_auction = Auction.create(:name => 'apple mouse', :product => @mouse)
     @keyboard_auction = Auction.create(:name => 'apple keyboard', :product => @keyboard)
+    @mouse_bid = Bid.create(:auction => @mouse_auction, :user => @administrator)
+    @keyboard_bid = Bid.create(:auction => @keyboard_auction, :user => @administrator)
     visit bids_path
-    login_as(:administrator)
+    login_as(@administrator)
   end
   
   describe 'GET index' do
     it 'should list some bids' do
       page.should have_content 'apple mouse'
+      page.should have_content 'User: user_email'
       page.should have_content 'apple keyboard'
     end
     

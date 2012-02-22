@@ -5,7 +5,9 @@
 <ul>
   <% for bid in @bids %>
   <li id="bid_<%= bid.id %>">
-    <%= link_to bid.id, bid %>
+    <%= link_to "#{t('activerecord.models.bid')}: #{bid.id} |
+      #{t('activerecord.attributes.bid.auction')}: #{bid.auction.name} |
+      #{t('activerecord.attributes.bid.user')}: #{bid.user.email}", bid %>
     | <%= link_to t(:edit), edit_bid_path(bid) %>
     | <%= link_to t(:remove), bid, :method => 'delete', :confirm => t(:bid_removal_confirmation) %>
   </li>
