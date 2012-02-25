@@ -16,7 +16,7 @@ describe 'Auctions' do
     @keyboard = Product.create(:name => 'hot keyboard')
     @mouse_auction = Auction.create(:name => 'apple mouse', :product => @mouse)
     @keyboard_auction = Auction.create(:name => 'apple keyboard', :product => @keyboard)
-    visit auctions_path
+    visit admin_auctions_path
     login_as(@administrator)
   end
   

@@ -2,14 +2,16 @@ P1::Application.routes.draw do
   devise_for :users
   
   scope '(/:locale)' do
-    resources :products
-    resources :auctions
-    resources :bids
+    namespace :admin do
+      resources :products
+      resources :auctions
+      resources :bids
+    end
   end
   
-  match '/:locale' => 'products#index'
+  match '/:locale' => 'home#index'
   
-  root :to => 'products#index', :locale => I18n.default_locale
+  root :to => 'home#index', :locale => I18n.default_locale
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

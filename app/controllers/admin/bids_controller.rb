@@ -1,4 +1,4 @@
-class BidsController < ApplicationController
+class Admin::BidsController < ApplicationController
   load_and_authorize_resource
   respond_to :html
   
@@ -15,7 +15,7 @@ class BidsController < ApplicationController
     if @bid.save
       flash[:notice] = t(:bid_successfully_created)
     end
-    respond_with @bid
+    respond_with(:admin, @bid)
   end
   
   def edit
@@ -25,12 +25,12 @@ class BidsController < ApplicationController
     if @bid.update_attributes(params[:bid])
       flash[:notice] = t(:bid_successfully_updated)
     end
-    respond_with @bid
+    respond_with(:admin, @bid)
   end
   
   def destroy
     @bid.destroy
     flash[:notice] = t(:bid_successfully_removed)
-    respond_with @bid
+    respond_with(:admin, @bid)
   end
 end

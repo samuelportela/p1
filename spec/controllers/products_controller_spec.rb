@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ProductsController do
+describe Admin::ProductsController do
 
   describe "GET 'index'" do
     it "returns http success" do

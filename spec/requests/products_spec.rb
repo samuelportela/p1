@@ -14,7 +14,7 @@ describe 'Products' do
     @administrator.confirm!
     @mouse = Product.create(:name => 'magic mouse')
     @keyboard = Product.create(:name => 'hot keyboard')
-    visit products_path
+    visit admin_products_path
     login_as(@administrator)
   end
   

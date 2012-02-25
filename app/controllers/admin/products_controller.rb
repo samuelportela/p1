@@ -1,4 +1,4 @@
-class ProductsController < ApplicationController
+class Admin::ProductsController < ApplicationController
   load_and_authorize_resource
   respond_to :html
   
@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
     if @product.save
       flash[:notice] = t(:product_successfully_created)
     end
-    respond_with @product
+    respond_with(:admin, @product)
   end
   
   def edit
@@ -25,12 +25,12 @@ class ProductsController < ApplicationController
     if @product.update_attributes(params[:product])
       flash[:notice] = t(:product_successfully_updated)
     end
-    respond_with @product
+    respond_with(:admin, @product)
   end
   
   def destroy
     @product.destroy
     flash[:notice] = t(:product_successfully_removed)
-    respond_with @product
+    respond_with(:admin, @product)
   end
 end

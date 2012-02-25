@@ -1,0 +1,13 @@
+<h1><%= t('activerecord.models.auction').pluralize %></h1>
+
+<%= link_to t(:create), new_admin_auction_path %>
+
+<ul>
+  <% for auction in @auctions %>
+  <li id="auction_<%= auction.id %>">
+    <%= link_to auction.name, admin_auction_path(auction) %>
+    | <%= link_to t(:edit), edit_admin_auction_path(auction) %>
+    | <%= link_to t(:remove), admin_auction_path(auction), :method => 'delete', :confirm => t(:auction_removal_confirmation) %>
+  </li>
+  <% end %>
+</ul>

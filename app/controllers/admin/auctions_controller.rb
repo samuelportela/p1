@@ -1,4 +1,4 @@
-class AuctionsController < ApplicationController
+class Admin::AuctionsController < ApplicationController
   load_and_authorize_resource
   respond_to :html
   
@@ -15,7 +15,7 @@ class AuctionsController < ApplicationController
     if @auction.save
       flash[:notice] = t(:auction_successfully_created)
     end
-    respond_with @auction
+    respond_with(:admin, @auction)
   end
   
   def edit
@@ -25,12 +25,12 @@ class AuctionsController < ApplicationController
     if @auction.update_attributes(params[:auction])
       flash[:notice] = t(:auction_successfully_updated)
     end
-    respond_with @auction
+    respond_with(:admin, @auction)
   end
   
   def destroy
     @auction.destroy
     flash[:notice] = t(:auction_successfully_removed)
-    respond_with @auction
+    respond_with(:admin, @auction)
   end
 end

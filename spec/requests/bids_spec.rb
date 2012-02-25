@@ -18,7 +18,7 @@ describe 'Bids' do
     @keyboard_auction = Auction.create(:name => 'apple keyboard', :product => @keyboard)
     @mouse_bid = Bid.create(:auction => @mouse_auction, :user => @administrator)
     @keyboard_bid = Bid.create(:auction => @keyboard_auction, :user => @administrator)
-    visit bids_path
+    visit admin_bids_path
     login_as(@administrator)
   end
   

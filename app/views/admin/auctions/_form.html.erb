@@ -1,4 +1,4 @@
-<%= form_for @auction do |f| %>
+<%= form_for([:admin, @auction]) do |f| %>
   <% if @auction.errors.any? %>
     <ul id="auction_messages">
       <% @auction.errors.full_messages.each do |message| %>
