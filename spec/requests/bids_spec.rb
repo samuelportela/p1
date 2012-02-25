@@ -22,77 +22,71 @@ describe 'Bids' do
     login_as(@administrator)
   end
   
-  describe 'GET index' do
+  describe 'GET' do
     it 'should list some bids' do
-      page.should have_content 'apple mouse'
-      page.should have_content 'User: user_email'
-      page.should have_content 'apple keyboard'
+      page.should have_content 'Bid: 1 | Auction: apple mouse | User: user_email'
+      page.should have_content 'Bid: 2 | Auction: apple keyboard | User: user_email'
     end
     
-    it 'should list a specific bid' do
+    it 'should show a specific bid' do
       click_link 'apple mouse'
       
       page.should have_content 'Details'
       page.should have_content 'apple mouse'
-      page.should have_content 'magic mouse'
+      page.should have_content 'user_email'
     end
   end
   
-  describe 'POST create' do
-    it 'should create an bid' do
+  describe 'POST' do
+    it 'should create a bid' do
+      page.should have_content 'Bid: 1 | Auction: apple mouse | User: user_email'
+      page.should have_content 'Bid: 2 | Auction: apple keyboard | User: user_email'
+      page.should_not have_content 'Bid: 3 | Auction: apple keyboard | User: user_email'
+      
       click_link 'Create'
-      fill_in 'Name', :with => 'new wireless keyboard'
-      select('hot keyboard', :from => 'Product')
+      select('apple keyboard', :from => 'Auction')
+      select('user_email', :from => 'User')
       click_button 'Create Bid'
       
       page.should have_content 'Bid successfully created.'
-      page.should have_content 'new wireless keyboard'
-      page.should have_content 'hot keyboard'
+      page.should have_content 'Auction: apple keyboard'
+      page.should have_content 'User: user_email'
       
       click_link 'List'
       
-      page.should have_content 'apple mouse'
-      page.should have_content 'apple keyboard'
-      page.should have_content 'new wireless keyboard'
+      page.should have_content 'Bid: 1 | Auction: apple mouse | User: user_email'
+      page.should have_content 'Bid: 2 | Auction: apple keyboard | User: user_email'
+      page.should have_content 'Bid: 3 | Auction: apple keyboard | User: user_email'
     end
     
     it 'should display error messages when validation errors exist' do
       click_link 'Create'
       click_button 'Create Bid'
       
-      page.should have_content 'Name is mandatory'
+      page.should have_content 'Auction is mandatory'
+      page.should have_content 'User is mandatory'
     end
   end
   
-  describe 'PUT update' do
-    it 'should update an bid' do
+  describe 'PUT' do
+    it 'should update a bid' do
       find("#bid_#{@mouse_bid.id}").click_link 'Edit'
       
-      find_field('Name').value.should == 'apple mouse'
+      find_field('Auction').value.should == '1'
+      find_field('User').value.should == '1'
       
-      fill_in 'Name', :with => 'new wireless keyboard'
-      select('hot keyboard', :from => 'Product')
+      select('apple keyboard', :from => 'Auction')
+      select('user_email', :from => 'User')
       click_button 'Update Bid'
       
       page.should have_content 'Bid successfully updated.'
-      page.should have_content 'new wireless keyboard'
-      page.should have_content 'hot keyboard'
-    end
-    
-    it 'should display error messages when validation errors exist' do
-      find("#bid_#{@keyboard_bid.id}").click_link 'Edit'
-      
-      find_field('Name').value.should == 'apple keyboard'
-      
-      fill_in 'Name', :with => ''
-      click_button 'Update Bid'
-      
-      page.should have_content 'Name is mandatory'
+      page.should have_content 'Auction: apple keyboard'
+      page.should have_content 'User: user_email'
     end
   end
   
-  describe 'DELETE destroy', :js => true do
-    it 'should delete an bid' do
+  describe 'DELETE', :js => true do
+    it 'should delete a bid' do
       find("#bid_#{@keyboard_bid.id}").click_link 'Remove'
       
       page.should have_content 'Confirmation'

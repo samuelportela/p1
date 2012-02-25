@@ -51,6 +51,14 @@ en:
           attributes:
             name:
               is_mandatory: is mandatory
+            product:
+              is_mandatory: is mandatory
+        bid:
+          attributes:
+            auction:
+              is_mandatory: is mandatory
+            user:
+              is_mandatory: is mandatory
   
   helpers:
     submit:
@@ -62,3 +70,5 @@ en:
       bid:
         auction_id: Auction
         user_id: User
+    select:
+      prompt: Select an option

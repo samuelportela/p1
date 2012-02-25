@@ -51,6 +51,14 @@ pt:
           attributes:
             name:
               is_mandatory: é obrigatório
+            product:
+              is_mandatory: é obrigatório
+        bid:
+          attributes:
+            auction:
+              is_mandatory: é obrigatório
+            user:
+              is_mandatory: é obrigatório
   
   helpers:
     submit:
@@ -62,3 +70,5 @@ pt:
       bid:
         auction_id: Leilão
         user_id: Usuário
+    select:
+      prompt: Selecione uma opção

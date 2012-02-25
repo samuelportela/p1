@@ -2,32 +2,31 @@ require 'spec_helper'
 
 describe 'Auctions' do
   
-  def login_as(role)
-    @administrator = User.new(:email => 'email', :password => 'password', :role => role)
-    @administrator.confirm!
-    
+  def login_as(user)
     click_link 'Sign in'
-    fill_in 'Email', :with => 'email'
-    fill_in 'Password', :with => 'password'
+    fill_in 'Email', :with => user.email
+    fill_in 'Password', :with => user.password
     click_button 'Sign in'
   end
   
   before do
+    @administrator = User.new(:email => 'user_email', :password => 'user_password', :role => :administrator)
+    @administrator.confirm!
     @mouse = Product.create(:name => 'magic mouse')
     @keyboard = Product.create(:name => 'hot keyboard')
     @mouse_auction = Auction.create(:name => 'apple mouse', :product => @mouse)
     @keyboard_auction = Auction.create(:name => 'apple keyboard', :product => @keyboard)
     visit auctions_path
-    login_as(:administrator)
+    login_as(@administrator)
   end
   
-  describe 'GET index' do
+  describe 'GET' do
     it 'should list some auctions' do
       page.should have_content 'apple mouse'
       page.should have_content 'apple keyboard'
     end
     
-    it 'should list a specific auction' do
+    it 'should show a specific auction' do
       click_link 'apple mouse'
       
       page.should have_content 'Details'
@@ -36,7 +35,7 @@ describe 'Auctions' do
     end
   end
   
-  describe 'POST create' do
+  describe 'POST' do
     it 'should create an auction' do
       click_link 'Create'
       fill_in 'Name', :with => 'new wireless keyboard'
@@ -59,10 +58,11 @@ describe 'Auctions' do
       click_button 'Create Auction'
       
       page.should have_content 'Name is mandatory'
+      page.should have_content 'Product is mandatory'
     end
   end
   
-  describe 'PUT update' do
+  describe 'PUT' do
     it 'should update an auction' do
       find("#auction_#{@mouse_auction.id}").click_link 'Edit'
       
@@ -89,7 +89,7 @@ describe 'Auctions' do
     end
   end
   
-  describe 'DELETE destroy', :js => true do
+  describe 'DELETE', :js => true do
     it 'should delete an auction' do
       find("#auction_#{@keyboard_auction.id}").click_link 'Remove'
       

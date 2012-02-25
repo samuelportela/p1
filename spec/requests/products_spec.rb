@@ -2,30 +2,29 @@ require 'spec_helper'
 
 describe 'Products' do
   
-  def login_as(role)
-    @administrator = User.new(:email => 'email', :password => 'password', :role => role)
-    @administrator.confirm!
-    
+  def login_as(user)
     click_link 'Sign in'
-    fill_in 'Email', :with => 'email'
-    fill_in 'Password', :with => 'password'
+    fill_in 'Email', :with => user.email
+    fill_in 'Password', :with => user.password
     click_button 'Sign in'
   end
   
   before do
+    @administrator = User.new(:email => 'user_email', :password => 'user_password', :role => :administrator)
+    @administrator.confirm!
     @mouse = Product.create(:name => 'magic mouse')
     @keyboard = Product.create(:name => 'hot keyboard')
     visit products_path
-    login_as(:administrator)
+    login_as(@administrator)
   end
   
-  describe 'GET index' do
+  describe 'GET' do
     it 'should list some products' do
       page.should have_content 'magic mouse'
       page.should have_content 'hot keyboard'
     end
     
-    it 'should list a specific product' do
+    it 'should show a specific product' do
       click_link 'magic mouse'
       
       page.should have_content 'Details'
@@ -33,7 +32,7 @@ describe 'Products' do
     end
   end
   
-  describe 'POST create' do
+  describe 'POST' do
     it 'should create a product' do
       click_link 'Create'
       fill_in 'Name', :with => 'trust mouse'
@@ -57,7 +56,7 @@ describe 'Products' do
     end
   end
   
-  describe 'PUT update' do
+  describe 'PUT' do
     it 'should update a product' do
       find("#product_#{@mouse.id}").click_link 'Edit'
       
@@ -82,7 +81,7 @@ describe 'Products' do
     end
   end
   
-  describe 'DELETE destroy', :js => true do
+  describe 'DELETE', :js => true do
     it 'should delete a product' do
       find("#product_#{@keyboard.id}").click_link 'Remove'
       

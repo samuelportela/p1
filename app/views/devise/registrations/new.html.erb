@@ -13,7 +13,7 @@
   <%= f.password_field :password_confirmation %></div>
 
   <div><%= f.label :role %><br />
-  <%= f.collection_select :role, User::ROLES, :to_s, :humanize %></div>
+  <%= f.collection_select(:role, User::ROLES, :to_s, :humanize, :prompt => true) %></div>
 
   <div><%= f.submit "Sign up" %></div>
 <% end %>

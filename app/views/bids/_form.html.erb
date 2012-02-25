@@ -8,10 +8,10 @@
   <% end %>
 
   <%= f.label :auction_id %>
-  <%= f.collection_select(:auction_id, Auction.all, :id, :name) %>
+  <%= f.collection_select(:auction_id, Auction.all, :id, :name, :prompt => true) %>
 
   <%= f.label :user_id %>
-  <%= f.collection_select(:user_id, User.all, :id, :email) %>
+  <%= f.collection_select(:user_id, User.all, :id, :email, :prompt => true) %>
 
   <%= f.submit %>
 <% end %>

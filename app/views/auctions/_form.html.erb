@@ -11,7 +11,7 @@
   <%= f.text_field :name %>
 
   <%= f.label :product_id %>
-  <%= f.collection_select(:product_id, Product.all, :id, :name) %>
+  <%= f.collection_select(:product_id, Product.all, :id, :name, :prompt => true) %>
 
   <%= f.submit %>
 <% end %>

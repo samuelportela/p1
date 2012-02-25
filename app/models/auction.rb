@@ -3,4 +3,5 @@ class Auction < ActiveRecord::Base
   has_many :bids
   
   validates :name, :presence => {:message => :is_mandatory}
+  validates :product, :presence => {:message => :is_mandatory}
 end
