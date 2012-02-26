@@ -8,3 +8,4 @@ tmp/
 /nbproject
 /.settings/
 /config/email_settings.yml
+/public/system/

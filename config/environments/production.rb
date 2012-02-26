@@ -76,4 +76,8 @@ P1::Application.configure do
   else
     config.action_mailer.default_url_options = {:host => 'localhost:3000'}
   end
+
+  # Paperclip file location configuration
+  Paperclip::Attachment.default_options[:url] = "/system/#{Rails.env}/:attachment/:class/:id/:style.:extension"
+  Paperclip::Attachment.default_options[:path] = ":rails_root/public/system/#{Rails.env}/:attachment/:class/:id/:style.:extension"
 end
