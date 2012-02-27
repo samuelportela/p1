@@ -48,6 +48,6 @@ P1::Application.configure do
   end
 
   # Paperclip file location configuration
-  Paperclip::Attachment.default_options[:url] = "/system/#{Rails.env}/:attachment/:class/:id/:style.:extension"
-  Paperclip::Attachment.default_options[:path] = ":rails_root/public/system/#{Rails.env}/:attachment/:class/:id/:style.:extension"
+  Paperclip::Attachment.default_options[:url] = "/system/:attachment/:class/:id/:style.:extension"
+  Paperclip::Attachment.default_options[:path] = ":rails_root/public/system/:attachment/:class/:id/:style.:extension"
 end
