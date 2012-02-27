@@ -1,0 +1,9 @@
+<h1><%= t('activerecord.models.auction').pluralize %></h1>
+
+<ul>
+  <% for auction in @auctions %>
+  <li id="auction_<%= auction.id %>">
+    <%= link_to auction.name, auction_path(auction) %>
+  </li>
+  <% end %>
+</ul>

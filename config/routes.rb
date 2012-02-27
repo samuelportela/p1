@@ -7,6 +7,8 @@ P1::Application.routes.draw do
       resources :auctions
       resources :bids
     end
+    
+    resources :auctions
   end
   
   match '/:locale' => 'home#index'

@@ -72,8 +72,8 @@ describe 'Bids' do
     it 'should update a bid' do
       find("#bid_#{@mouse_bid.id}").click_link 'Edit'
       
-      find_field('Auction').value.should == '1'
-      find_field('User').value.should == '1'
+      find_field('Auction').value.should == "#{@mouse_auction.id}"
+      find_field('User').value.should == "#{@administrator.id}"
       
       select('apple keyboard', :from => 'Auction')
       select('user_email', :from => 'User')
