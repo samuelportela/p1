@@ -9,6 +9,7 @@ class Admin::ProductsController < ApplicationController
   end
   
   def new
+    5.times { @product.photos.build }
   end
   
   def create
@@ -19,6 +20,7 @@ class Admin::ProductsController < ApplicationController
   end
   
   def edit
+    5.times { @product.photos.build }
   end
   
   def update

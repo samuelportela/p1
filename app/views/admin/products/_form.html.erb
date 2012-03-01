@@ -8,7 +8,22 @@
   <% end %>
   
   <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.file_field :image %>
+  <%= f.text_field :name %><br />
+
+
+  <%= f.fields_for :photos do |photo| %>
+    <% if photo.object.new_record? %>
+      <%= photo.file_field :file %><br />
+    <% end %>
+  <% end %>
+
+
+  <%= f.fields_for :photos do |photo| %>
+    <% unless photo.object.new_record? %>
+      <%= link_to(image_tag(photo.object.file.url(:small)), photo.object.file.url(:large)) %>
+      <%= photo.check_box :_destroy %><br />
+    <% end %>
+  <% end %>
+
   <%= f.submit %>
 <% end %>

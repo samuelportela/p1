@@ -4,7 +4,9 @@
   <%= t('activerecord.attributes.product.name') %>:
   <%= @product.name %><br />
   
-  <%= image_tag @product.image.url(:thumb) %>
+  <% @product.photos.each do |photo| %>
+    <%= link_to(image_tag(photo.file.url(:small)), photo.file.url(:large)) %><br />
+  <% end %>
 </p>
 
 <%= link_to t(:list), admin_products_path %>
