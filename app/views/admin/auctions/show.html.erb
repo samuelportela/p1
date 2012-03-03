@@ -4,10 +4,9 @@
   <%= t('activerecord.attributes.auction.name') %>:
   <%= @auction.name %><br />
   
-  <%= t('activerecord.attributes.auction.product') %>:
-  <%= @auction.product.name %><br />
-  
-  <%= image_tag @auction.product.image.url(:thumb) %>
+  <% @auction.product.photos.each do |photo| %>
+    <%= link_to(image_tag(photo.file.url(:small)), photo.file.url(:large)) %><br />
+  <% end %>
 </p>
 
 <%= link_to t(:list), admin_auctions_path %>

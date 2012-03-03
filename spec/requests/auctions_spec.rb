@@ -31,7 +31,6 @@ describe 'Auctions' do
       
       page.should have_content 'Details'
       page.should have_content 'apple mouse'
-      page.should have_content 'magic mouse'
     end
   end
 end

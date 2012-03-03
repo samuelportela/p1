@@ -31,7 +31,6 @@ describe 'Auctions' do
       
       page.should have_content 'Details'
       page.should have_content 'apple mouse'
-      page.should have_content 'magic mouse'
     end
   end
   
@@ -44,7 +43,6 @@ describe 'Auctions' do
       
       page.should have_content 'Auction successfully created.'
       page.should have_content 'new wireless keyboard'
-      page.should have_content 'hot keyboard'
       
       click_link 'List'
       
@@ -74,7 +72,6 @@ describe 'Auctions' do
       
       page.should have_content 'Auction successfully updated.'
       page.should have_content 'new wireless keyboard'
-      page.should have_content 'hot keyboard'
     end
     
     it 'should display error messages when validation errors exist' do
