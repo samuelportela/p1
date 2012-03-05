@@ -1,0 +1,7 @@
+<% if I18n.available_locales.any? %>
+  <ul id="languages">
+    <% I18n.available_locales.each do |locale| %>
+      <li><%= link_to t(locale), {:locale => locale} %></li>
+    <% end %>
+  </ul>
+<% end %>
