@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class HomeController < BaseController
   respond_to :html
   
   def index

@@ -1,4 +1,4 @@
-class AuctionsController < ApplicationController
+class AuctionsController < BaseController
   load_and_authorize_resource
   respond_to :html
   
