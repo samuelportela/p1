@@ -6,6 +6,7 @@ class CreateAuctions < ActiveRecord::Migration
       t.datetime :finish_at
       t.decimal :end_price
       t.references :product
+      t.integer :last_bidder_id
 
       t.timestamps
     end

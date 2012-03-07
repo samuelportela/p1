@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20120229035435) do
     t.datetime "finish_at"
     t.decimal  "end_price"
     t.integer  "product_id"
+    t.integer  "last_bidder_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
