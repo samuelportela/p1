@@ -38,6 +38,7 @@ pt:
       auction:
         name: Nome
         product: Produto
+        last_bidder: Último ofertante
       bid:
         auction: Leilão
         user: Usuário
@@ -53,6 +54,8 @@ pt:
               is_mandatory: é obrigatório
             product:
               is_mandatory: é obrigatório
+            last_bidder:
+              not_found: não encontrado
         bid:
           attributes:
             auction:

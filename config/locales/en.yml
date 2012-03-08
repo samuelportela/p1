@@ -38,6 +38,7 @@ en:
       auction:
         name: Name
         product: Product
+        last_bidder: Last bidder
       bid:
         auction: Auction
         user: User
@@ -53,6 +54,8 @@ en:
               is_mandatory: is mandatory
             product:
               is_mandatory: is mandatory
+            last_bidder:
+              not_found: not found
         bid:
           attributes:
             auction:
