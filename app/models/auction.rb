@@ -5,5 +5,9 @@ class Auction < ActiveRecord::Base
   
   validates :name, :presence => {:message => :is_mandatory}
   validates :product, :presence => {:message => :is_mandatory}
-  validates :last_bidder, :presence => {:message => :not_found}, :if => 'last_bidder_id.present?'
+  validates :last_bidder, :presence => {:message => :not_found}, :if => :has_last_bidder
+  
+  def has_last_bidder
+    last_bidder_id.present?
+  end
 end
