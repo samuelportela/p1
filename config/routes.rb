@@ -1,4 +1,8 @@
+require File.expand_path('../blacklist_constraint', __FILE__)
+
 P1::Application.routes.draw do
+  match "*admin" => "home#index", :constraints => BlacklistConstraint.new
+  
   devise_for :users
   
   scope '(/:locale)' do
