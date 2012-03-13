@@ -1,5 +1,3 @@
-require File.expand_path('../../load_config', __FILE__)
-
 P1::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
