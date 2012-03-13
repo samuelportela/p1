@@ -6,11 +6,14 @@ pt:
   en: English
   pt: Português
   project_name: Projeto P1
+  admin_system: Sistema Administrador
   details: Detalhes
   list: Listar
   create: Criar
   edit: Editar
   remove: Remover
+  
+  choose_an_option_from_the_menu: Por favor, escolha uma opção do menu.
   
   product_removal_confirmation: Você tem certeza de que deseja remover este produto?
   product_successfully_created: Produto criado com sucesso.

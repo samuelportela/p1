@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= t(:project_name) %></title>
+  <title><%= t('project_name') %></title>
   <%= stylesheet_link_tag 'application' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
@@ -16,9 +16,8 @@
 </head>
 <body>
 
-<%= render 'flash_messages' %>
-<%= render 'language_selector' %>
-<%= render 'authentication_box' %>
+<%= render 'header' %>
+<%= render 'menu' %>
 
 <%= yield %>
 

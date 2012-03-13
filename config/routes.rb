@@ -10,6 +10,8 @@ P1::Application.routes.draw do
       resources :products
       resources :auctions
       resources :bids
+  
+      root :to => 'admin#index'
     end
     
     resources :auctions
