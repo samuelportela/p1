@@ -1,5 +1,5 @@
 # Custom application configuration file
-config_file_path = "#{Rails.root}/config/config.yml"
+config_file_path = "#{Rails.root}/config/extras/config.yml"
 environment = Rails.env
 
 begin
