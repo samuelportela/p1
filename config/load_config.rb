@@ -19,8 +19,8 @@ development:
     
   # email cofiguration
   send_email: true
-  email_username: negociosnainternet@gmail.com
-  email_password: samcal80
+  email_username: username@gmail.com
+  email_password: password
   default_url_host: localhost:3000
   smtp_address: smtp.gmail.com
   smtp_port: 587
