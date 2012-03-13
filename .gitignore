@@ -8,3 +8,4 @@ tmp/
 /nbproject
 /.settings/
 /public/system/
+/config/extras/config.yml

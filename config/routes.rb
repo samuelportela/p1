@@ -1,4 +1,4 @@
-require File.expand_path('../blacklist_constraint', __FILE__)
+require File.expand_path('../extras/blacklist_constraint', __FILE__)
 
 P1::Application.routes.draw do
   match "*admin" => "home#index", :constraints => BlacklistConstraint.new
