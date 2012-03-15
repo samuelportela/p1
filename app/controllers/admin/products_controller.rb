@@ -1,4 +1,4 @@
-class Admin::ProductsController < Admin::AdminController
+class Admin::ProductsController < Admin::BaseController
   load_and_authorize_resource
   respond_to :html
   

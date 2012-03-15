@@ -1,4 +1,4 @@
-class Admin::AuctionsController < Admin::AdminController
+class Admin::AuctionsController < Admin::BaseController
   load_and_authorize_resource
   respond_to :html
   

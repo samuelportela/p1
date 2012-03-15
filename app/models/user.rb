@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   
   has_many :bids
   
-  ROLES = ['administrator', 'analyzer']
+  ROLES = ['administrator', 'analyzer', 'bidder']
   
   def is?(role_name)
     role == role_name.to_s
