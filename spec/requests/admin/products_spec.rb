@@ -14,9 +14,9 @@ describe 'Products' do
     @administrator.confirm!
     @mouse = Product.create(:name => 'magic mouse')
     @keyboard = Product.create(:name => 'hot keyboard')
-    visit root_path
+    visit admin_root_path(:locale => :en)
     login_as(@administrator)
-    visit admin_products_path
+    click_link 'List Products'
   end
   
   describe 'GET' do
