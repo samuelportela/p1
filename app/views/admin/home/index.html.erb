@@ -1,1 +1,3 @@
-<%= "#{t('admin_system')} - #{t('choose_an_option_from_the_menu')}" %>
+<% if can? :read, :menu %>
+  <%= "#{t('admin_system')} - #{t('choose_an_option_from_the_menu')}" %>
+<% end %>
