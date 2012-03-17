@@ -17,11 +17,7 @@
 <body>
 
 <%= render 'header' %>
-
-<% if user_signed_in? &&
-    (current_user.is?(:administrator) || current_user.is?(:analyzer)) %>
-  <%= render 'menu' %>
-<% end %>
+<%= render 'menu' %>
 
 <%= yield %>
 
