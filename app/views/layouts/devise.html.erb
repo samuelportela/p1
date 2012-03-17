@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= t('project_name') %></title>
+  <%= stylesheet_link_tag 'application' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <script>
+    $.i18n.properties({
+      name: 'messages',
+      language: '<%= I18n.locale %>',
+      path: '/messages/',
+      mode: 'both'
+    });
+  </script>
+</head>
+<body>
+
+<%= render 'header' %>
+<%= render 'menu' %>
+
+<%= yield %>
+
+</body>
+</html>

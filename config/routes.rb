@@ -3,9 +3,10 @@ require File.expand_path('../extras/blacklist_constraint', __FILE__)
 P1::Application.routes.draw do
   match "*admin" => "home#index", :constraints => BlacklistConstraint.new
   
-  devise_for :users
-  
   scope '(:locale)' do
+  
+    devise_for :users
+  
     namespace :admin do
       resources :products
       resources :auctions

@@ -56,3 +56,19 @@ en:
         subject: 'Reset password instructions'
       unlock_instructions:
         subject: 'Unlock Instructions'
+  
+  # Custom devise translations
+  
+  sign_in: Sign in
+  create_account: Create an account
+  forgot_password: Forgot your password?
+  didnt_receive_confirmation_instructions: Didn't receive confirmation instructions?
+  didnt_receive_unlock_instructions: Didn't receive unlock instructions?
+  sign_in_with: Sign in with
+  
+  helpers:
+    label:
+      user:
+        email: Email
+        password: Password
+        remember_me: Stay signed in
