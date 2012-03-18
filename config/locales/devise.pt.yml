@@ -59,12 +59,40 @@ pt:
   
   # Custom devise translations
   
+  signed_in_as: Logado como
+  not_you: Não é você?
+  sign_out: Sair
+  or: ou
+  do_login: Fazer login
   sign_in: Login
-  create_account: Criar uma conta
+  create_account: Criar conta
   forgot_password: Esqueceu a senha?
   didnt_receive_confirmation_instructions: Não recebeu instruções para confirmação?
   didnt_receive_unlock_instructions: Não recebeu instruções para desbloqueio?
   sign_in_with: Logar-se com
+  resend_confirmation_instructions: Reenviar instruções para confirmação
+  welcome: Bem-vindo
+  confirm_account_through_link_below: Você pode confirmar sua conta através do link abaixo
+  confirm_my_account: Confirmar minha conta
+  hello: Olá
+  someone_requested_to_change_your_password: Alguém solicitou um link para mudar sua senha, e você pode fazer isso através do link abaixo
+  change_password: Alterar senha
+  if_you_didnt_request_ignore_this_email: Se você não solicitou isso, favor ignorar este e-mail.
+  password_wont_change_until_you_access_link_and_create_a_new_one: Sua senha não irá mudar até que você acesse o link acima e crie uma nova.
+  account_locked_due_to_excessive_amount_of_unsuccessful_sign_in_attempts: Sua conta foi bloqueada devido a excessivas tentativas de login sem sucesso.
+  click_to_unlock_your_account: Clique no link abaixo para desbloquear sua conta
+  unlock_my_account: Desbloquear minha conta
+  new_password: Nova senha
+  confirm_new_password: Confirmar nova senha
+  send_me_reset_password_instructions: Me enviar instruções para reinicialização de senha
+  update: Atualizar
+  leave_blank_if_dont_want_to_change: deixar vazio caso não queira alterar
+  we_need_your_current_password_to_confirm_your_changes: precisamos de sua atual para confirmar suas alterações
+  cancel_account: Cancelar conta
+  unhappy: Insatisfeito?
+  account_cancellation_confirmation: Você tem certeza de que deseja cancelar sua conta?
+  back: Voltar
+  resend_unlock_instructions: Reenviar instruções para desbloqueio
   
   helpers:
     label:

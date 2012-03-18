@@ -1,9 +1,9 @@
 <div id="authentication_box">
   <% if user_signed_in? %>
-    Signed in as <%= current_user.email %>.
-    Not you? <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+    <%= "#{t('signed_in_as')} #{current_user.email}." %>
+    <%= t('not_you') %> <%= link_to t('sign_out'), destroy_user_session_path, :method => :delete %>
   <% else %>
-    <%= link_to "Sign up", new_user_registration_path %>
-    or <%= link_to "Sign in", new_user_session_path %>
+    <%= link_to t('create_account'), new_user_registration_path %>
+    <%= t('or') %> <%= link_to t('do_login'), new_user_session_path %>
   <% end %>
 </div>
