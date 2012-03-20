@@ -46,6 +46,9 @@ en:
       bid:
         auction: Auction
         user: User
+      photo:
+        is_cover: Is cover
+        _destroy: Remove
     errors:
       models:
         product:

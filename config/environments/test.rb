@@ -59,4 +59,5 @@ P1::Application.configure do
   # Paperclip file location configuration
   Paperclip::Attachment.default_options[:url] = "/system/:attachment/:class/:id/:style.:extension"
   Paperclip::Attachment.default_options[:path] = ":rails_root/public/system/:attachment/:class/:id/:style.:extension"
+  Paperclip::Attachment.default_options[:default_url] = "missing/:style/missing.png"
 end

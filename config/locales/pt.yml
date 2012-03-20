@@ -46,6 +46,9 @@ pt:
       bid:
         auction: Leilão
         user: Usuário
+      photo:
+        is_cover: É capa
+        _destroy: Remover
     errors:
       models:
         product:

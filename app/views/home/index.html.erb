@@ -1,1 +1,10 @@
 <%= "#{t('welcome_to')} #{t('project_name')}" %>
+
+<ul>
+  <% for auction in @auctions %>
+    <li id="auction_<%= auction.id %>">
+      <%= link_to auction.name, auction_path(auction) %><br />
+      <%= auction_cover(auction, :small) %><br />
+    </li>
+  <% end %>
+</ul>

@@ -20,8 +20,13 @@
 
   <%= f.fields_for :photos do |photo| %>
     <% unless photo.object.new_record? %>
-      <%= link_to(image_tag(photo.object.file.url(:small)), photo.object.file.url(:large)) %>
-      <%= photo.check_box :_destroy %><br />
+      <%= link_to(image_tag(photo.object.file(:small)), photo.object.file(:large)) %>
+      
+      <%= photo.check_box :is_cover %>
+      <%= photo.label :is_cover %>
+      
+      <%= photo.check_box :_destroy %>
+      <%= photo.label :_destroy %><br />
     <% end %>
   <% end %>
 
