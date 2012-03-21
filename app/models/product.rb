@@ -4,5 +4,5 @@ class Product < ActiveRecord::Base
   
   accepts_nested_attributes_for :photos, :allow_destroy => true
   
-  validates :name, :presence => {:message => :is_mandatory}
+  validates :name, :presence => true
 end

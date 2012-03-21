@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe Auction do
-  it { should validate_presence_of(:name).with_message('is mandatory') }
+  it { should validate_presence_of(:name).with_message('is required') }
   
-  it { should validate_presence_of(:product).with_message('is mandatory') }
+  it { should validate_presence_of(:product).with_message('is required') }
   
   it 'should not validate last_bidder referential integrity when last_bidder_id is nil' do
     product = Product.new

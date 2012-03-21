@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(:version => 20120229035435) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.string   "display_name"
+    t.integer  "remaining_bids"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "role"

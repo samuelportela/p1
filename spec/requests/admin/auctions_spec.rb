@@ -56,8 +56,8 @@ describe 'Auctions' do
       click_link 'Create'
       click_button 'Create Auction'
       
-      page.should have_content 'Name is mandatory'
-      page.should have_content 'Product is mandatory'
+      page.should have_content 'Name is required'
+      page.should have_content 'Product is required'
     end
   end
   
@@ -83,7 +83,7 @@ describe 'Auctions' do
       fill_in 'Name', :with => ''
       click_button 'Update Auction'
       
-      page.should have_content 'Name is mandatory'
+      page.should have_content 'Name is required'
     end
   end
   

@@ -19,4 +19,12 @@ module ApplicationHelper
     photos.where(:is_cover => true)
   end
   
+  def auction_last_bidder(auction)
+    if auction && auction.last_bidder
+      auction.last_bidder.display_name
+    else
+      '---'
+    end
+  end
+  
 end

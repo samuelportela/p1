@@ -53,7 +53,7 @@ describe 'Products' do
       click_link 'Create'
       click_button 'Create Product'
       
-      page.should have_content 'Name is mandatory'
+      page.should have_content 'Name is required'
     end
   end
   
@@ -78,7 +78,7 @@ describe 'Products' do
       fill_in 'Name', :with => ''
       click_button 'Update Product'
       
-      page.should have_content 'Name is mandatory'
+      page.should have_content 'Name is required'
     end
   end
   

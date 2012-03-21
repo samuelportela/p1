@@ -5,6 +5,7 @@
     <li id="auction_<%= auction.id %>">
       <%= link_to auction.name, auction_path(auction) %><br />
       <%= auction_cover(auction, :small) %><br />
+      <%= auction_last_bidder(auction) %><br />
     </li>
   <% end %>
 </ul>

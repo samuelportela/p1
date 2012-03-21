@@ -11,6 +11,12 @@ class User < ActiveRecord::Base
   
   ROLES = ['administrator', 'analyzer', 'bidder']
   
+  validates :role, :presence => true
+  
+  validates :display_name, :presence => true
+  
+  validates :remaining_bids, :presence => true
+  
   def is?(role_name)
     role == role_name.to_s
   end

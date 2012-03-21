@@ -49,26 +49,38 @@ pt:
       photo:
         is_cover: É capa
         _destroy: Remover
+      user:
+        email: E-mail
+        password: Senha
+        role: Perfil
+        display_name: Nome de exibição
+        remaining_bids: Lances restantes
     errors:
-      models:
-        product:
-          attributes:
-            name:
-              is_mandatory: é obrigatório
-        auction:
-          attributes:
-            name:
-              is_mandatory: é obrigatório
-            product:
-              is_mandatory: é obrigatório
-            last_bidder:
-              not_found: não encontrado
-        bid:
-          attributes:
-            auction:
-              is_mandatory: é obrigatório
-            user:
-              is_mandatory: é obrigatório
+      # The default format to use in full error messages.
+      format: "%{attribute} %{message}"
+
+      # The values :model, :attribute and :value are always available for interpolation
+      # The value :count is available when applicable. Can be used for pluralization.
+      messages:
+        inclusion: "não está incluso na lista"
+        exclusion: "é reservado"
+        invalid: "é inválido"
+        confirmation: "não está de acordo com a confirmação"
+        accepted: "deve ser aceito"
+        empty: "deve ser informado"
+        blank: "deve ser informado"
+        too_long: "é muito longo (máximo é %{count} caracteres)"
+        too_short: "é muito curto (mínimo é %{count} caracteres)"
+        wrong_length: "possui tamanho incorreto (deve ter %{count} caracteres)"
+        not_a_number: "não é um número"
+        not_an_integer: "deve ser um inteiro"
+        greater_than: "deve ser maior que %{count}"
+        greater_than_or_equal_to: "deve ser maior ou igual a %{count}"
+        equal_to: "deve ser igual a %{count}"
+        less_than: "deve ser menor que %{count}"
+        less_than_or_equal_to: "deve ser menor ou igual a %{count}"
+        odd: "deve ser ímpar"
+        even: "deve ser par"
   
   helpers:
     submit:

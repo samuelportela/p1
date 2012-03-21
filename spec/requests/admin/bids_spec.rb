@@ -64,8 +64,8 @@ describe 'Bids' do
       click_link 'Create'
       click_button 'Create Bid'
       
-      page.should have_content 'Auction is mandatory'
-      page.should have_content 'User is mandatory'
+      page.should have_content 'Auction is required'
+      page.should have_content 'User is required'
     end
   end
   
