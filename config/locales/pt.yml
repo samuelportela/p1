@@ -52,6 +52,8 @@ pt:
       user:
         email: E-mail
         password: Senha
+        password_confirmation: Confirmação de senha
+        current_password: Senha atual
         role: Perfil
         display_name: Nome de exibição
         remaining_bids: Lances restantes

@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe Auction do
-  it { should validate_presence_of(:name).with_message('is required') }
+  it { should validate_presence_of(:name) }
   
-  it { should validate_presence_of(:product).with_message('is required') }
+  it { should validate_presence_of(:product) }
   
   it 'should not validate last_bidder referential integrity when last_bidder_id is nil' do
     product = Product.new
@@ -21,7 +21,7 @@ describe Auction do
   end
   
   it 'should be valid' do
-    user = User.new(:email => 'user_email', :password => 'user_password', :role => :administrator)
+    user = User.new
     user.confirm!
     user.id.should_not be_nil
     product = Product.new

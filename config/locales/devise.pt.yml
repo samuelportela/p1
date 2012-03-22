@@ -87,7 +87,7 @@ pt:
   send_me_reset_password_instructions: Me enviar instruções para reinicialização de senha
   update: Atualizar
   leave_blank_if_dont_want_to_change: deixar vazio caso não queira alterar
-  we_need_your_current_password_to_confirm_your_changes: precisamos de sua atual para confirmar suas alterações
+  we_need_your_current_password_to_confirm_your_changes: precisamos de sua senha atual para confirmar suas alterações
   cancel_account: Cancelar conta
   unhappy: Insatisfeito?
   account_cancellation_confirmation: Você tem certeza de que deseja cancelar sua conta?

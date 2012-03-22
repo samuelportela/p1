@@ -5,7 +5,7 @@ P1::Application.routes.draw do
   
   scope '(:locale)' do
   
-    devise_for :users
+    devise_for :users, :controllers => { :registrations => 'access/registrations' }
   
     namespace :admin do
       resources :products
