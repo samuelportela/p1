@@ -13,14 +13,9 @@ class Admin::BidsController < Admin::BaseController
   
   def create
     if @bid.save
-      update_auction_last_bidder(@bid.auction, @bid.user)
       flash[:notice] = t(:bid_successfully_created)
     end
     respond_with(:admin, @bid)
-  end
-  
-  def update_auction_last_bidder(auction, user)
-    auction.update_attribute(:last_bidder, user)
   end
   
   def edit

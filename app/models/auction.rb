@@ -10,4 +10,8 @@ class Auction < ActiveRecord::Base
   def has_last_bidder?
     last_bidder_id.present?
   end
+  
+  def update_last_bidder(user)
+    update_attribute(:last_bidder, user)
+  end
 end
