@@ -10,7 +10,7 @@ describe 'Bids' do
   end
   
   before do
-    @administrator = User.new(:email => 'user_email', :password => 'user_password', :role => :administrator)
+    @administrator = User.new(:email => 'user_email', :password => 'user_password', :role => :administrator, :remaining_bids => 5)
     @administrator.confirm!
     @mouse = Product.create(:name => 'magic mouse')
     @keyboard = Product.create(:name => 'hot keyboard')

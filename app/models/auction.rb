@@ -8,10 +8,14 @@ class Auction < ActiveRecord::Base
   validates :last_bidder, :presence => {:message => :not_found}, :if => :has_last_bidder?
   
   def has_last_bidder?
-    last_bidder_id.present?
+    self.last_bidder_id.present?
   end
   
   def update_last_bidder(user)
-    update_attribute(:last_bidder, user)
+    self.update_attribute(:last_bidder, user)
+  end
+  
+  def increase_end_price
+    self.end_price += 0.01
   end
 end

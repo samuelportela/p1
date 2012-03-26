@@ -12,9 +12,6 @@
 
   <%= f.label :product_id %>
   <%= f.collection_select(:product_id, Product.all, :id, :name, :prompt => true) %>
-  
-  <%= f.label :last_bidder_id %>
-  <%= f.text_field :last_bidder_id %>
 
   <%= f.submit %>
 <% end %>
