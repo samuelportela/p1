@@ -32,6 +32,6 @@ class User < ActiveRecord::Base
   end
   
   def decrease_remaining_bids
-    self.remaining_bids -= 1
+    self.update_attribute(:remaining_bids, self.remaining_bids - 1)
   end
 end

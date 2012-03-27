@@ -5,6 +5,8 @@ describe Auction do
   
   it { should validate_presence_of(:product) }
   
+  it { should validate_presence_of(:end_price) }
+  
   it 'should not validate last_bidder referential integrity when last_bidder_id is nil' do
     product = Product.new
     auction = Auction.new(:name => 'New iPod', :product => product, :last_bidder_id => nil)
