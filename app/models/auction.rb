@@ -12,7 +12,7 @@ class Auction < ActiveRecord::Base
   
   def init
     if self.end_price.nil?
-      self.end_price = 0
+      self.end_price = BigDecimal.new('0')
     end
   end
   
@@ -25,6 +25,6 @@ class Auction < ActiveRecord::Base
   end
   
   def increase_end_price
-    self.update_attribute(:end_price, self.end_price + 0.01)
+    self.update_attribute(:end_price, self.end_price + BigDecimal.new('0.01'))
   end
 end

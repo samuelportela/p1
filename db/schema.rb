@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(:version => 20120229035435) do
   end
 
   create_table "bids", :force => true do |t|
-    t.datetime "time"
     t.integer  "auction_id"
     t.integer  "user_id"
     t.datetime "created_at"

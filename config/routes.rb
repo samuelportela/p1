@@ -16,6 +16,7 @@ P1::Application.routes.draw do
     end
     
     resources :auctions
+    resources :bids
     
     root :to => 'home#index'
   end

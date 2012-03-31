@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   validates :remaining_bids, :presence => true
   
   def is?(role_name)
-    self.role == role_name.to_s
+    self.role.to_s == role_name.to_s
   end
   
   def has_remaining_bids?

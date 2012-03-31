@@ -7,6 +7,7 @@
       <%= auction_cover(auction, :small) %><br />
       <%= auction.end_price %><br />
       <%= auction_last_bidder(auction) %><br />
+      <%= link_to t('activerecord.models.bid'), bids_path(:auction_id => auction.id), :remote => true, :method => :post %><br />
     </li>
   <% end %>
 </ul>

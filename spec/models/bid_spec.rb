@@ -17,15 +17,20 @@ describe Bid do
     auction = Auction.create(:name => 'apple mouse', :product => mouse)
     mouse.should be_valid
     auction.end_price.should == 0
+    
     user = User.create(:email => 'valid@email.com',
       :password => 'user_password',
       :role => :bidder,
       :display_name => 'user_display_name',
-      :remaining_bids => 1)
-    bid = Bid.create(:auction => auction, :user => user)
+      :remaining_bids => 57)
+    
+    57.times do
+      bid = Bid.create(:auction => auction, :user => user)
+    end
+    
     user = User.find(user.id)
     auction = Auction.find(auction.id)
     user.remaining_bids.should == 0
-    auction.end_price.should == 0.01
+    auction.end_price.should == 0.57
   end
 end
