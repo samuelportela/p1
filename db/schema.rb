@@ -15,11 +15,11 @@ ActiveRecord::Schema.define(:version => 20120229035435) do
 
   create_table "auctions", :force => true do |t|
     t.string   "name"
-    t.datetime "start_at"
-    t.datetime "finish_at"
+    t.datetime "end_time"
     t.decimal  "end_price"
     t.integer  "product_id"
     t.integer  "last_bidder_id"
+    t.boolean  "is_active"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

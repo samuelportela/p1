@@ -8,10 +8,16 @@
   <% end %>
   
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name %><br />
 
   <%= f.label :product_id %>
-  <%= f.collection_select(:product_id, Product.all, :id, :name, :prompt => true) %>
+  <%= f.collection_select(:product_id, Product.all, :id, :name, :prompt => true) %><br />
+
+  <%= f.label :end_time %>
+  <%= f.datetime_select :end_time, :prompt => true %><br />
+
+  <%= f.check_box :is_active %>
+  <%= f.label :is_active %><br />
 
   <%= f.submit %>
 <% end %>
