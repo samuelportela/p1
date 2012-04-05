@@ -14,6 +14,32 @@
         // $('#countDownTimer').countdown('change', 'until', 30);
       });
       </script>
+      
+      <br />
+      Testing Node.js
+      <br />
+      
+      <script type="text/javascript" src="http://localhost:8000/nowjs/now.js"></script>
+
+      <script type="text/javascript">
+      $(document).ready(function() {
+        now.name = prompt('What is you name?', '');
+
+        $('#sendButton').click(function() {
+          now.sendMessage($('#messageField').val());
+        });
+
+        now.receberMensagem = function(name, message) {
+          $('<div></div>').text(name + ': ' + message).appendTo('#messages');
+        };
+      });
+      </script>
+
+      <h1>Showing updates</h1>
+      <input type="text" id="messageField" />
+      <input type="button" value="Send" id="sendButton">
+      <div id="messages"></div>
+      
       <%= (auction.end_time - Time.zone.now).to_i %><br />
       <%= auction.end_price %><br />
       <%= auction_last_bidder(auction) %><br />
