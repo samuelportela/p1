@@ -5,15 +5,11 @@
     <li id="auction_<%= auction.id %>">
       <%= link_to auction.name, auction_path(auction) %><br />
       <%= auction_cover(auction, :small) %><br />
-      <p><span id="countDownTimer" class="countdown"></span></p><br />
-      <script type="text/javascript">
-      $(function () {
-        var element = '#countDownTimer';
-        $(element).countdown({until: <%= (auction.end_time - Time.zone.now).to_i %>, compact: true, format: 'HMS'});
-        // The line below must be called when someone bids
-        // $('#countDownTimer').countdown('change', 'until', 30);
-      });
-      </script>
+      <div class="counter" id="<%= auction.id %>">
+        <div class="time">--:--:--</div>
+        <input type="hidden" name="seconds" value="<%= (auction.end_time - Time.zone.now).to_i %>" />
+        <input type="hidden" name="cycle" value="30" />
+      </div>
       
       <br />
       Testing Node.js
@@ -40,7 +36,6 @@
       <input type="button" value="Send" id="sendButton">
       <div id="messages"></div>
       
-      <%= (auction.end_time - Time.zone.now).to_i %><br />
       <%= auction.end_price %><br />
       <%= auction_last_bidder(auction) %><br />
       <%= link_to t('activerecord.models.bid'), bids_path(:auction_id => auction.id), :remote => true, :method => :post %><br />
