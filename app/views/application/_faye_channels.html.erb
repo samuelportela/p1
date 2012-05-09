@@ -1,0 +1,23 @@
+<script lang="javascript">
+  $(function() {
+    var receiveAuctionBid = function(userDisplayName, auctionId, auctionEndPrice, auctionRemainingTime) {
+      $('li#auction_' + auctionId).find('.auctionEndPrice').text(auctionEndPrice);
+      return $('li#auction_' + auctionId).find('.auctionLastBidder').text(userDisplayName);
+    };
+
+    var client = new Faye.Client('<%= "http://#{APP_CONFIG['node_js_host']}:#{APP_CONFIG['node_js_port']}/faye" %>');
+
+    client.subscribe('/auctionsChannel', function(data) {
+      receiveAuctionBid(data.userDisplayName,
+        data.auctionId,
+        data.auctionEndPrice,
+        data.auctionRemainingTime);
+    });
+
+    <% if user_signed_in? %>
+      client.subscribe('/remainingBidsChannel/<%= current_user.id %>', function(data) {
+        $('span#remaining_bids').text($('span#remaining_bids').text() - data.userBidsToDecrease);
+      });
+    <% end %>
+  });
+</script>

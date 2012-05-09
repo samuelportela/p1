@@ -23,6 +23,10 @@ development:
     - 127.0.0.1
     - 127.0.0.2
     
+  # node.js configuration
+  node_js_host: 127.0.0.1
+  node_js_port: 8000
+  
   # email cofiguration
   send_email: true
   email_username: username@gmail.com
@@ -40,6 +44,10 @@ test:
     - 127.0.0.1
     - 127.0.0.2
     
+  # node.js configuration
+  node_js_host: 127.0.0.1
+  node_js_port: 8000
+  
   # email cofiguration
   send_email: false
 
@@ -51,6 +59,10 @@ production:
     - 127.0.0.1
     - 127.0.0.2
     
+  # node.js configuration
+  node_js_host: 127.0.0.1
+  node_js_port: 8000
+  
   # email cofiguration
   send_email: false
 ####################"

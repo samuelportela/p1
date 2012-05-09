@@ -130,6 +130,8 @@ GEM
     rb-appscript (0.6.1)
     rdoc (3.11)
       json (~> 1.4)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rspec (2.7.0)
       rspec-core (~> 2.7.0)
       rspec-expectations (~> 2.7.0)
@@ -207,6 +209,7 @@ DEPENDENCIES
   paperclip
   pg
   rails (= 3.1.1)
+  rest-client
   rspec-rails
   ruby-debug-base19x (~> 0.11.30.pre4)
   ruby-debug19

@@ -10,6 +10,8 @@ gem 'devise'
 gem 'cancan'
 gem 'paperclip'
 # run 'brew install imagemagick' to install imagemagick (paperclip requires it)
+gem 'jquery-rails'
+gem 'rest-client'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -18,8 +20,6 @@ group :assets do
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
 end
-
-gem 'jquery-rails'
 
 group :development, :test do
   gem 'linecache19', :git => 'git://github.com/mark-moseley/linecache'

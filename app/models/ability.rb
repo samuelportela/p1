@@ -8,6 +8,8 @@ class Ability
     
     if user.is? :bidder
       can :create, Bid
+    elsif user.is? :analyzer
+      can :create, Bid
     elsif user.is? :administrator
       can :manage, :all
     end

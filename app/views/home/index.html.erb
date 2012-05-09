@@ -5,40 +5,15 @@
     <li id="auction_<%= auction.id %>">
       <%= link_to auction.name, auction_path(auction) %><br />
       <%= auction_cover(auction, :small) %><br />
-      <div class="counter" id="<%= auction.id %>">
-        <div class="time">--:--:--</div>
-        <input type="hidden" name="seconds" value="<%= (auction.end_time - Time.zone.now).to_i %>" />
-        <input type="hidden" name="cycle" value="30" />
-      </div>
       
-      <br />
-      Testing Node.js
-      <br />
+      <div class="countdown"
+           id="<%= auction.id %>"
+           data-countdown-cycle="30"
+           data-countdown-seconds="<%= (auction.end_time - Time.zone.now).to_i %>">--:--:--</div>
       
-      <script type="text/javascript" src="http://localhost:8000/nowjs/now.js"></script>
-
-      <script type="text/javascript">
-      $(document).ready(function() {
-        now.name = prompt('What is you name?', '');
-
-        $('#sendButton').click(function() {
-          now.sendMessage($('#messageField').val());
-        });
-
-        now.receberMensagem = function(name, message) {
-          $('<div></div>').text(name + ': ' + message).appendTo('#messages');
-        };
-      });
-      </script>
-
-      <h1>Showing updates</h1>
-      <input type="text" id="messageField" />
-      <input type="button" value="Send" id="sendButton">
-      <div id="messages"></div>
-      
-      <%= auction.end_price %><br />
-      <%= auction_last_bidder(auction) %><br />
-      <%= link_to t('activerecord.models.bid'), bids_path(:auction_id => auction.id), :remote => true, :method => :post %><br />
+      <div class="auctionEndPrice"><%= auction.end_price %></div><br />
+      <div class="auctionLastBidder"><%= auction_last_bidder(auction) %></div><br />
+      <%= link_to t('activerecord.models.bid'), bids_path(:auction_id => auction.id), :remote => true, :method => :post %>
     </li>
   <% end %>
 </ul>

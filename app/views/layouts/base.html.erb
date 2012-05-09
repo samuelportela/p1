@@ -4,15 +4,10 @@
   <title><%= t('project_name') %></title>
   <%= stylesheet_link_tag 'application' %>
   <%= javascript_include_tag 'application' %>
+  <%= render 'faye_client_js' %>
   <%= csrf_meta_tags %>
-  <script>
-    $.i18n.properties({
-      name: 'messages',
-      language: '<%= I18n.locale %>',
-      path: '/messages/',
-      mode: 'both'
-    });
-  </script>
+  <%= render 'i18n_properties' %>
+  <%= render 'faye_channels' %>
 </head>
 <body>
 
