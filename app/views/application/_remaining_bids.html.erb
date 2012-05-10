@@ -1,1 +1,3 @@
-<span><%= "#{t('activerecord.attributes.user.remaining_bids')}: " %></span><span id="remaining_bids"><%= current_user.remaining_bids %></span><br />
+<% if user_signed_in? %>
+  <span><%= "#{t('activerecord.attributes.user.remaining_bids')}: " %></span><span id="remaining_bids"><%= current_user.remaining_bids %></span><br />
+<% end %>
