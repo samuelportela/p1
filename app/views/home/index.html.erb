@@ -8,7 +8,7 @@
       
       <div class="countdown <%= auction.remaining_time ? 'on' : 'off' %>"
            id="<%= auction.id %>"
-           data-countdown-cycle="30"
+           data-countdown-cycle="<%= auction.cycle %>"
            data-countdown-seconds="<%= auction.remaining_time %>">--:--:--</div>
       
       <div class="auctionEndPrice"><%= auction.end_price %></div>

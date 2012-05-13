@@ -22,6 +22,13 @@ describe Auction do
     auction.errors[:last_bidder][0].should be_eql('not found')
   end
   
+  it 'should validate cycle when end_time is present' do
+    product = Product.new
+    auction = Auction.new(:name => 'New iPod', :product => product, :end_time => 12345)
+    auction.should_not be_valid
+    auction.errors.size.should be 1
+  end
+  
   it 'should be valid' do
     user = User.new
     user.confirm!

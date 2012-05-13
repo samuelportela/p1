@@ -45,6 +45,7 @@ pt:
         last_bidder: Último ofertante
         is_active: Ativo
         end_time: Término
+        cycle: Ciclo
       bid:
         auction: Leilão
         user: Usuário

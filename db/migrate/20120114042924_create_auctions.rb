@@ -7,6 +7,7 @@ class CreateAuctions < ActiveRecord::Migration
       t.references :product
       t.integer :last_bidder_id
       t.boolean :is_active
+      t.integer :cycle
 
       t.timestamps
     end

@@ -45,6 +45,7 @@ en:
         last_bidder: Last bidder
         is_active: Active
         end_time: End time
+        cycle: Cycle
       bid:
         auction: Auction
         user: User

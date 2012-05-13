@@ -9,6 +9,7 @@ class Auction < ActiveRecord::Base
   validates :product, :presence => true
   validates :end_price, :presence => true
   validates :last_bidder, :presence => {:message => :not_found}, :if => :has_last_bidder?
+  validates :cycle, :presence => {:message => :not_found}, :if => :has_end_time?
   
   def init
     if self.end_price.nil?
@@ -32,5 +33,9 @@ class Auction < ActiveRecord::Base
     if self.end_time
       (self.end_time - Time.zone.now).to_i
     end
+  end
+  
+  def has_end_time?
+    self.end_time != nil
   end
 end

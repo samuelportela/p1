@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20120229035435) do
     t.integer  "product_id"
     t.integer  "last_bidder_id"
     t.boolean  "is_active"
+    t.integer  "cycle"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
