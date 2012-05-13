@@ -27,4 +27,10 @@ class Auction < ActiveRecord::Base
   def increase_end_price
     self.update_attribute(:end_price, self.end_price + BigDecimal.new('0.01'))
   end
+  
+  def remaining_time
+    if self.end_time
+      (self.end_time - Time.zone.now).to_i
+    end
+  end
 end

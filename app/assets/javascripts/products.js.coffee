@@ -28,4 +28,4 @@ $ ->
     question = $(this).attr("data-confirm")
     confirmation_window($(this)).html(question).dialog "open"
 
-  $(".countdown").countdown textOnComplete: $.i18n.prop("finished")
+  $(".countdown.on").countdown textOnComplete: $.i18n.prop("finished")

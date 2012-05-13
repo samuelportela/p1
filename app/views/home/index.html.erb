@@ -6,13 +6,13 @@
       <%= link_to auction.name, auction_path(auction) %><br />
       <%= auction_cover(auction, :small) %><br />
       
-      <div class="countdown"
+      <div class="countdown <%= auction.remaining_time ? 'on' : 'off' %>"
            id="<%= auction.id %>"
            data-countdown-cycle="30"
-           data-countdown-seconds="<%= (auction.end_time - Time.zone.now).to_i %>">--:--:--</div>
+           data-countdown-seconds="<%= auction.remaining_time %>">--:--:--</div>
       
-      <div class="auctionEndPrice"><%= auction.end_price %></div><br />
-      <div class="auctionLastBidder"><%= auction_last_bidder(auction) %></div><br />
+      <div class="auctionEndPrice"><%= auction.end_price %></div>
+      <div class="auctionLastBidder"><%= auction_last_bidder(auction) %></div>
       <%= link_to t('activerecord.models.bid'), bids_path(:auction_id => auction.id), :remote => true, :method => :post %>
     </li>
   <% end %>

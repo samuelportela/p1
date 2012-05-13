@@ -13,12 +13,16 @@ class BidsController < BaseController
   end
   
   def notify_bid_creation
-    RestClient.post "http://#{APP_CONFIG['node_js_host']}:#{APP_CONFIG['node_js_port']}/notifyBidCreation",
-      :userId => @bid.user.id,
-      :userDisplayName => @bid.user.display_name,
-      :userBidsToDecrease => 1,
-      :auctionId => @bid.auction.id,
-      :auctionEndPrice => @bid.auction.end_price,
-      :auctionRemainingTime => (@bid.auction.end_time - Time.zone.now).to_i
+    begin
+      RestClient.post "http://#{APP_CONFIG['node_js_host']}:#{APP_CONFIG['node_js_port']}/notifyBidCreation",
+        :userId => @bid.user.id,
+        :userDisplayName => @bid.user.display_name,
+        :userBidsToDecrease => 1,
+        :auctionId => @bid.auction.id,
+        :auctionEndPrice => @bid.auction.end_price,
+        :auctionRemainingTime => @bid.auction.remaining_time
+    rescue
+      puts 'An error occurred while trying to notify bid creation'
+    end
   end
 end
