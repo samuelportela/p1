@@ -1,13 +1,15 @@
 <script lang="javascript">
   $(function() {
     var receiveAuctionBid = function(userDisplayName, auctionId, auctionEndPrice, auctionRemainingTime) {
-      $('li#auction_' + auctionId).find('.auctionEndPrice').
-        stop(true, true).
-        text(auctionEndPrice).
-        formatCurrency({region: 'pt-BR'}).
-        effect('highlight', {color:'#FFCC00'}, 500);
+      $('span#auction_' + auctionId).find('.auctionEndPrice').queue(function() {
+        $(this).html(auctionEndPrice).formatCurrency({region: 'pt-BR'});
+        $(this).dequeue();
+      }).effect('highlight', {color:'#FFCC00'}, 500);
       
-      return $('li#auction_' + auctionId).find('.auctionLastBidder').text(userDisplayName);
+      return $('span#auction_' + auctionId).find('.auctionLastBidder').queue(function() {
+        $(this).html(userDisplayName);
+        $(this).dequeue();
+      }).show('slide', {direction: 'up'}, 500);
     };
 
     var client = new Faye.Client('<%= "http://#{APP_CONFIG['node_js_host']}:#{APP_CONFIG['node_js_port']}/faye" %>');
