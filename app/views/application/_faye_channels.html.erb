@@ -1,7 +1,12 @@
 <script lang="javascript">
   $(function() {
     var receiveAuctionBid = function(userDisplayName, auctionId, auctionEndPrice, auctionRemainingTime) {
-      $('li#auction_' + auctionId).find('.auctionEndPrice').text(auctionEndPrice);
+      $('li#auction_' + auctionId).find('.auctionEndPrice').
+        stop(true, true).
+        text(auctionEndPrice).
+        formatCurrency({region: 'pt-BR'}).
+        effect('highlight', {color:'#FFCC00'}, 500);
+      
       return $('li#auction_' + auctionId).find('.auctionLastBidder').text(userDisplayName);
     };
 
